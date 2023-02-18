@@ -12,13 +12,13 @@ const questions = [
                 },
                 {
                     text: "site infiltration paving with not connected tiles with gravel joints open-graded aggregate systems to the ground groundwater recharge",
-                    cost: 6,
+                    cost: -6,
                     point: 0.5,
                     img: "1_1_2.png"
                 },
                 {
                     text: "open grid paving systems to storage tanks Use in building water supply system",
-                    cost: 19000,
+                    cost: -19000,
                     point: 0.5,
                     img: "1_1_3.png"
                 }
