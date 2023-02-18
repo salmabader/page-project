@@ -150,6 +150,7 @@ for (let i = 0; i < questions.length; i++) {
         if (id == numOfQuestions) {
             const resultBtn = document.createElement("button")
             resultBtn.setAttribute("type", "submit")
+            resultBtn.setAttribute("onclick", `location.href ='result.html?points=${myPoints}'`)
             resultBtn.setAttribute("class", "bg-white px-6 py-1 rounded-full flex items-center gap-1 hover:bg-slate-200 transition-all duration-150")
             resultBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 inline">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
