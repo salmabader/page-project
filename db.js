@@ -32,19 +32,19 @@ const questions = [
             answers: [
                 {
                     text: "A management strategy is created by a qualified Environmental Professional to ensure the survival and enhancement of the natural landscape",
-                    cost: 26000,
+                    cost: -26000,
                     point: 1,
                     img: "1_2_1.jpg"
                 },
                 {
                     text: "The three-year aged Solar Reflectance Index (SRI) values of the hardscape, shade structures and roofs meet the requirement",
-                    cost: 5500,
+                    cost: -5500,
                     point: 1,
                     img: "1_2_2.png"
                 },
                 {
                     text: "following the light and glare standards values in requirement",
-                    cost: 1300,
+                    cost: -1300,
                     point: 1,
                     img: "1_2_3.png"
                 }
@@ -80,13 +80,13 @@ const questions = [
             answers: [
                 {
                     text: "Electric Vehicle Supply Equipment (Phoenix Contact)",
-                    cost: 750000,
+                    cost: -750000,
                     point: 1,
                     img: "2_1_1.png"
                 },
                 {
                     text: "Electric Vehicle Supply Equipment (BESENERGY EV)",
-                    cost: 26000,
+                    cost: -26000,
                     point: 1,
                     img: "2_1_2.png"
                 }
@@ -107,7 +107,7 @@ const questions = [
                 },
                 {
                     text: "An area of a room that has been separated by gypsum boards with an area of 15 square meters",
-                    cost: 6000,
+                    cost: -6000,
                     point: 1,
                     img: "2_2_2.jpg"
                 }
@@ -121,13 +121,13 @@ const questions = [
             answers: [
                 {
                     text: "shaded bicycle parking floor stand type",
-                    cost: 1600,
+                    cost: -1600,
                     point: 0.5,
                     img: "2_3_1.png"
                 },
                 {
                     text: "shaded bicycle parking wall hanger type",
-                    cost: 2000,
+                    cost: -2000,
                     point: 0.5,
                     img: "2_3_2.png"
                 }
@@ -143,7 +143,7 @@ const questions = [
             answers: [
                 {
                     text: "Islamic geometric motifs on the building façade Architectural patterns",
-                    cost: 20000,
+                    cost: -20000,
                     point: 2,
                     img: "3_1_1.jpg"
                 },
@@ -177,7 +177,7 @@ const questions = [
                 },
                 {
                     text: "Exterior Green Vertical Landscaping Facades- Intensive Green Walls Types- (improvement 3.03 %)",
-                    cost: 300,
+                    cost: -300,
                     point: 0.5,
                     img: "4_1_3.png"
                 },
@@ -223,7 +223,7 @@ const questions = [
                 },
                 {
                     text: "Electric shutter (improvement 0.53 %)",
-                    cost: 1200,
+                    cost: -1200,
                     point: 0.5,
                     img: "4_3_3.png"
                 }
@@ -315,7 +315,7 @@ const questions = [
                 },
                 {
                     text: "light green (B) efficiency AC (16.5>EER>14.5)(improvement 24%)",
-                    cost: 38000,
+                    cost: -38000,
                     point: 3,
                     img: "4_7_2.jpg"
                 }
@@ -401,13 +401,13 @@ const questions = [
             answers: [
                 {
                     text: "PV panels achieve 4% of the renewable energy generated",
-                    cost: 600,
+                    cost: -600,
                     point: 1,
                     img: "4_11_1.jpg"
                 },
                 {
                     text: "PV panels achieve 25% of the renewable energy generated",
-                    cost: 3700,
+                    cost: -3700,
                     point: 5,
                     img: "4_11_2.jpg"
                 }
@@ -443,13 +443,13 @@ const questions = [
             answers: [
                 {
                     text: "Reduces 50% by returning to landscape design professionals to plan irrigation areas and use automatic Micro Drip Irrigation System that connecting to the rain and surplus water collection tank",
-                    cost: 2000,
+                    cost: -2000,
                     point: 2,
                     img: "5_2_1.png"
                 },
                 {
                     text: "Reduces 80% by use Central Reverse Osmosis System Station as an irrigation Source",
-                    cost: 23000,
+                    cost: -23000,
                     point: 5,
                     img: "5_2_2.png"
                 }
@@ -463,13 +463,13 @@ const questions = [
             answers: [
                 {
                     text: "use soil moisture sensors in irrigation",
-                    cost: 1500,
+                    cost: -1500,
                     point: 2,
                     img: "5_3_1.png"
                 },
                 {
                     text: "use soil moisture sensors and smart controllers in irrigation",
-                    cost: 1400,
+                    cost: -1400,
                     point: 2,
                     img: "5_3_2.png"
                 }
@@ -489,7 +489,7 @@ const questions = [
                 },
                 {
                     text: "Air conditioning water condensate",
-                    cost: 3600,
+                    cost: -3600,
                     point: 1,
                     img: "5_4_2.png"
                 }
@@ -503,13 +503,13 @@ const questions = [
             answers: [
                 {
                     text: "<b>Graywater recycling</b> Graywater from showers, sinks, washing machines and dishwashers is collected and recycled to be used on-site for WC flushing or irrigation.",
-                    cost: 48000,
+                    cost: -48000,
                     point: 1,
                     img: "5_5_1.jpg"
                 },
                 {
                     text: "<b>Treated wastewater</b> At least 50% of wastewater is treated on-site and infiltrated or used on-site for irrigation.",
-                    cost: 8600,
+                    cost: -8600,
                     point: 1,
                     img: "5_5_2.png"
                 }
@@ -537,7 +537,7 @@ const questions = [
                 },
                 {
                     text: "have views and automated glare-control devices are installed on all windows",
-                    cost: 500,
+                    cost: -500,
                     point: 1,
                     img: "6_1_3.png"
                 }
@@ -551,13 +551,13 @@ const questions = [
             answers: [
                 {
                     text: "field test reports obtained from the specialist audio engineer to make sure the Internal ambient noise levels are less than 35 to 40dB(A)",
-                    cost: 200,
+                    cost: -200,
                     point: 1,
                     img: "6_2_1.png"
                 },
                 {
                     text: "Indoor Air Quality (IAQ) Testing",
-                    cost: 3000,
+                    cost: -3000,
                     point: 0.5,
                     img: "6_2_2.jpg"
                 },
@@ -571,13 +571,13 @@ const questions = [
             answers: [
                 {
                     text: "the external doors draft stopper under door seal (v shape) types",
-                    cost: 300,
+                    cost: -300,
                     point: 0.5,
                     img: "6_3_1.png"
                 },
                 {
                     text: "the external doors draft stopper under door seal (PVC rubber) types",
-                    cost: 100,
+                    cost: -100,
                     point: 0.5,
                     img: "6_3_2.png"
                 },
@@ -591,19 +591,19 @@ const questions = [
             answers: [
                 {
                     text: "Front Entrance shading",
-                    cost: 400,
+                    cost: -400,
                     point: 1,
                     img: "6_4_1.png"
                 },
                 {
                     text: "Courtyards/ patios shading cover",
-                    cost: 2000,
+                    cost: -2000,
                     point: 1,
                     img: "6_4_2.png"
                 },
                 {
                     text: "shading the walkways paths",
-                    cost: 9600,
+                    cost: -9600,
                     point: 1,
                     img: "6_4_3.jpg"
                 },
@@ -617,7 +617,7 @@ const questions = [
             answers: [
                 {
                     text: "Purchase orders for all (adhesives, Sealants, Paints and Coatings) do not exceed the VOC limits of (SCAQMD)",
-                    cost: 2080,
+                    cost: -2080,
                     point: 1,
                     img: "6_5_1.jpg"
                 },
@@ -629,7 +629,7 @@ const questions = [
                 },
                 {
                     text: "The design of the building complies with the requirements of the Lifetime Homes standard In to make building Access for All",
-                    cost: 72500.88,
+                    cost: -72500.88,
                     point: 1,
                     img: "6_5_3.png"
                 },
@@ -646,13 +646,13 @@ const questions = [
             answers: [
                 {
                     text: "Have a Contractor develops a construction and demolition waste management plan (CDWMP)",
-                    cost: 7000,
+                    cost: -7000,
                     point: 0.5,
                     img: "7_1_1.jpg"
                 },
                 {
                     text: "monthly monitoring of the CDWMP",
-                    cost: 6000,
+                    cost: -6000,
                     point: 0.5,
                     img: "7_1_2.jpg"
                 }
@@ -672,7 +672,7 @@ const questions = [
                 },
                 {
                     text: "A minimum of 15% of all aggregates used on site are recycled aggregates.",
-                    cost: 3200,
+                    cost: -3200,
                     point: 1,
                     img: "7_2_2.jpg"
                 },
@@ -688,13 +688,13 @@ const questions = [
             answers: [
                 {
                     text: "An innovative design or environmentally friendly product",
-                    cost: 4600,
+                    cost: -4600,
                     point: 2,
                     img: "8_1_1.png"
                 },
                 {
                     text: "sustainable innovation in the building structure or in the hydraulic or smart systems",
-                    cost: 58000,
+                    cost: -58000,
                     point: 2,
                     img: "8_1_2.jpg"
                 }
@@ -710,13 +710,13 @@ const questions = [
             answers: [
                 {
                     text: "Residential Waste Management by Recycling bins",
-                    cost: 600,
+                    cost: -600,
                     point: 0.5,
                     img: "9_1_1.jpg"
                 },
                 {
                     text: "Residential Waste Management by Recycling waste sorting bag",
-                    cost: 22,
+                    cost: -22,
                     point: 0.5,
                     img: "9_1_2.png"
                 },
