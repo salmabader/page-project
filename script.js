@@ -107,7 +107,7 @@ for (let i = 0; i < questions.length; i++) {
             outLable.appendChild(answerText)
 
             const cost = document.createElement("p")
-            cost.setAttribute("class", "w-28 mx-2 text-center text-sm font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full")
+            cost.setAttribute("class", "md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full")
             if (questions[i][j]['answers'][k]['cost'] < 0) {
                 cost.innerHTML = `<i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> `
             }
