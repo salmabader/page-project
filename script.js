@@ -15,7 +15,7 @@ let id = 1
 let questionNumber = 0
 let currentQ = 1
 let myCost = 0
-let myPoints = 0
+let myPoints = 20
 
 categoryNo.innerHTML = catNum
 qNum.innerHTML = currentQ
@@ -108,7 +108,13 @@ for (let i = 0; i < questions.length; i++) {
 
             const cost = document.createElement("p")
             cost.setAttribute("class", "w-28 mx-2 text-center text-sm font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full")
-            cost.innerHTML = `${questions[i][j]['answers'][k]['cost']} SR`
+            if (questions[i][j]['answers'][k]['cost'] < 0) {
+                cost.innerHTML = `<i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> `
+            }
+            if (questions[i][j]['answers'][k]['cost'] > 0) {
+                cost.innerHTML = `<i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> `
+            }
+            cost.innerHTML += `${Math.abs(questions[i][j]['answers'][k]['cost'])} SR`
             outLable.appendChild(cost)
 
             const point = document.createElement("p")
