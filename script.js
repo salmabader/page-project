@@ -165,7 +165,7 @@ for (let i = 0; i < questions.length; i++) {
 
 }
 
-function showNext(id) {
+function showNext(id, prev) {
     const allSections = document.querySelectorAll("section")
     allSections.forEach(section => {
         if (section.id != id) {
@@ -180,7 +180,7 @@ function showNext(id) {
             updateQuestionNum()
             updateCate()
             changeBg()
-            updatePointAndCost()
+            updatePointAndCost(prev)
         }
     });
 }
@@ -198,6 +198,7 @@ function showBack(id) {
             updateQuestionNum()
             updateCate()
             changeBg()
+            reducePointAndCost(id)
         } else {
             section.classList.add("hidden")
         }
@@ -208,9 +209,10 @@ document.querySelectorAll("button").forEach(button => {
     button.addEventListener('click', function (s) {
         if (s.target.id.split("-")[0] == 'next') {
             let clickedID = s.target.id.split("-")[2]
+            let current = "section-" + clickedID
             clickedID++
             clickedID = "section-" + clickedID
-            showNext(clickedID)
+            showNext(clickedID, current)
         }
         else if (s.target.id.split("-")[0] == 'back') {
             let clickedID = s.target.id.split("-")[2]
@@ -221,30 +223,6 @@ document.querySelectorAll("button").forEach(button => {
     })
 })
 
-document.querySelectorAll("input[type=radio]").forEach(checked => {
-    checked.addEventListener('change', function (s) {
-        let id = s.target.id.split("-")
-        let c = id[0].split("#")[1]
-        let q = id[1].split("#")[1]
-        let a = id[2].split("#")[1]
-        let selected_cost = questions[c][q]['answers'][a]['cost']
-        let selected_point = questions[c][q]['answers'][a]['point']
-        myCost += selected_cost
-        myPoints += selected_point
-    })
-})
-document.querySelectorAll("input[type=checkbox]").forEach(checked => {
-    checked.addEventListener('change', function (s) {
-        let id = s.target.id.split("-")
-        let c = id[0].split("#")[1]
-        let q = id[1].split("#")[1]
-        let a = id[2].split("#")[1]
-        let selected_cost = questions[c][q]['answers'][a]['cost']
-        let selected_point = questions[c][q]['answers'][a]['point']
-        myCost += selected_cost
-        myPoints += selected_point
-    })
-})
 
 // functions
 
@@ -267,7 +245,87 @@ function updateCate() {
 
 }
 
-function updatePointAndCost() {
+function updatePointAndCost(prev) {
+    let sectionNo = prev.split('-')[1]
+    let btn = 0
+    let myId = 0
+    let c = 0
+    let q = 0
+    let a = 0
+    let selected_cost = 0
+    let selected_point = 0
+
+    if (flattenQuestions[sectionNo - 1]['isMultiSelect']) {
+        btn = document.querySelector(`#${prev}`).querySelectorAll("input[type=checkbox]:checked")
+    } else {
+        btn = document.querySelector(`#${prev}`).querySelector("input[type=radio]:checked")
+    }
+
+    if (btn && btn.length == undefined) {
+        myId = btn.id.split("-")
+        c = myId[0].split("#")[1]
+        q = myId[1].split("#")[1]
+        a = myId[2].split("#")[1]
+        selected_cost = questions[c][q]['answers'][a]['cost']
+        selected_point = questions[c][q]['answers'][a]['point']
+        myCost += selected_cost
+        myPoints += selected_point
+    }
+    else if (btn && btn.length != undefined) {
+        btn.forEach(bt => {
+            myId = bt.id.split("-")
+            c = myId[0].split("#")[1]
+            q = myId[1].split("#")[1]
+            a = myId[2].split("#")[1]
+            selected_cost = questions[c][q]['answers'][a]['cost']
+            selected_point = questions[c][q]['answers'][a]['point']
+            myCost += selected_cost
+            myPoints += selected_point
+        });
+    }
     cost.innerHTML = myCost
     points.innerHTML = myPoints
+}
+
+function reducePointAndCost(id) {
+    let sectionNo = id.split('-')[1]
+    let btn = 0
+    let myId = 0
+    let c = 0
+    let q = 0
+    let a = 0
+    let selected_cost = 0
+    let selected_point = 0
+
+    if (flattenQuestions[sectionNo - 1]['isMultiSelect']) {
+        btn = document.querySelector(`#${id}`).querySelectorAll("input[type=checkbox]:checked")
+    } else {
+        btn = document.querySelector(`#${id}`).querySelector("input[type=radio]:checked")
+    }
+
+    if (btn && btn.length == undefined) {
+        myId = btn.id.split("-")
+        c = myId[0].split("#")[1]
+        q = myId[1].split("#")[1]
+        a = myId[2].split("#")[1]
+        selected_cost = questions[c][q]['answers'][a]['cost']
+        selected_point = questions[c][q]['answers'][a]['point']
+        myCost -= selected_cost
+        myPoints -= selected_point
+    }
+    else if (btn && btn.length != undefined) {
+        btn.forEach(bt => {
+            myId = bt.id.split("-")
+            c = myId[0].split("#")[1]
+            q = myId[1].split("#")[1]
+            a = myId[2].split("#")[1]
+            selected_cost = questions[c][q]['answers'][a]['cost']
+            selected_point = questions[c][q]['answers'][a]['point']
+            myCost -= selected_cost
+            myPoints -= selected_point
+        });
+    }
+    cost.innerHTML = myCost
+    points.innerHTML = myPoints
+
 }
