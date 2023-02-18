@@ -29,7 +29,7 @@ for (let i = 0; i < questions.length; i++) {
     for (let j = 0; j < questions[i].length; j++) {
         const section = document.createElement('section')
         section.setAttribute("id", `section-${id}`)
-        section.setAttribute("class", "relative flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10")
+        section.setAttribute("class", "relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10")
         if (id != 1) {
             section.classList.add("hidden")
         }
