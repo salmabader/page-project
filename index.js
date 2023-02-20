@@ -1,6 +1,6 @@
 import html2pdf from './html2pdf/dist/html2pdf.js';
 
-const url = 'questionsToPrint.html'; // replace with the URL of the HTML page you want to convert
+const url = './questionsToPrint.html'; // replace with the URL of the HTML page you want to convert
 const options = {
     margin: [10, 10, 10, 10],
     filename: 'my-file.pdf',
