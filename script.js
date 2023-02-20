@@ -118,11 +118,6 @@ if (document.querySelector("#questions-page")) {
                 }
                 cost.innerHTML += `${Math.abs(questions[i][j]['answers'][k]['cost'])} SR`
                 outLable.appendChild(cost)
-
-                const point = document.createElement("p")
-                point.setAttribute("class", "hidden")
-                point.innerHTML = `${questions[i][j]['answers'][k]['point']}`
-                outLable.appendChild(point)
             }
             const buttons = document.createElement("div")
             if (id != numOfQuestions) {
