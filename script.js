@@ -218,7 +218,7 @@ if (document.querySelector("#questions-page")) {
             }
         })
     })
-    resultBtn.addEventListener('click',function(){
+    resultBtn.addEventListener('click', function () {
         updatePointAndCost('section-32')
         window.location.href = `result.html?points=${myPoints}&cost=${myCost}`
     })
@@ -362,3 +362,30 @@ if (document.querySelector("#result-page")) {
         resultSec.setAttribute("class", "flex flex-col w-full items-center text-center gap-10 bg-white shadow-lg rounded-lg border border-gray-400 py-10 lg:w-1/2 w-4/5")
     }
 }
+
+if (document.querySelector('#dowloadBtn')) {
+    document.querySelector('#dowloadBtn').addEventListener('click', function () {
+        const url = './questionsToPrint.html'; // replace with the URL of the HTML page you want to convert
+        // Create an iframe element with the specified URL
+        var iframe = document.createElement('iframe');
+        iframe.src = url;
+
+        // Hide the iframe
+        iframe.style.display = 'none';
+
+        // Append the iframe to the document body
+        document.body.appendChild(iframe);
+
+        // Wait for the iframe to finish loading
+        iframe.onload = function () {
+            // Use the html2pdf library to convert the iframe's contents to a PDF
+            html2pdf().from(iframe.contentWindow.document.body)
+                .set({ pagebreak: { mode: 'avoid-all' } }).save('result.pdf');
+
+            // Remove the iframe from the document
+            document.body.removeChild(iframe);
+        };
+
+    })
+}
+
