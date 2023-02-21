@@ -219,6 +219,7 @@ if (document.querySelector("#questions-page")) {
         })
     })
     resultBtn.addEventListener('click',function(){
+        updatePointAndCost('section-32')
         window.location.href = `result.html?points=${myPoints}&cost=${myCost}`
     })
 
