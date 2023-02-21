@@ -178,9 +178,6 @@ if (document.querySelector("#questions-page")) {
                 changeBg()
                 updatePointAndCost(prev)
             }
-            if (id == 'section-32') {
-                resultBtn.setAttribute("onclick", `location.href ='result.html?points=${myPoints}&cost=${myCost}'`)
-            }
         });
     }
 
@@ -220,6 +217,9 @@ if (document.querySelector("#questions-page")) {
                 showBack(clickedID)
             }
         })
+    })
+    resultBtn.addEventListener('click',function(){
+        window.location.href = `result.html?points=${myPoints}&cost=${myCost}`
     })
 
 
