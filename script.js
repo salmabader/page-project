@@ -396,10 +396,9 @@ if (document.querySelector('#dowloadBtn')) {
         doc.html(clonedElement, {
             callback: function (doc) {
                 // Save the PDF
-                doc.save('document-html.pdf');
+                doc.save('Result.pdf');
             },
-            margin: [10, 10, 10, 10],
-            autoPaging: 'text',
+            margin: [10, 10, 5, 10],
             x: 0,
             y: 0,
             width: 190, //target width in the PDF document
