@@ -308,7 +308,7 @@ if (document.querySelector("#questions-page")) {
         } else {
             btn.push(document.querySelector(`#${id}`).querySelector("input[type=radio]:checked"))
         }
-        if (btn) {
+        if (btn[0]) {
             selectedIds = []
             btn.forEach(element => {
                 selectedIds.push(element.id)
