@@ -374,16 +374,37 @@ if (document.querySelector("#result-page")) {
 }
 
 if (document.querySelector('#dowloadBtn')) {
-    document.querySelector('#dowloadBtn').addEventListener('click', function () {
-        // Get the HTML element you want to convert to PDF
-        const element = document.getElementById("section-to-print")
-        // clone the element
-        const clonedElement = element.cloneNode(true);
-        // change display of cloned element 
-        clonedElement.classList.remove("hidden")
-        // Use html2pdf's from() method to add the element to the PDF
-        html2pdf().from(clonedElement).set({ pagebreak: { mode: 'avoid-all' } }).save('result.pdf')
+    window.jsPDF = window.jspdf.jsPDF;
 
+    document.querySelector('#dowloadBtn').addEventListener('click', function () {
+        // // Get the HTML element you want to convert to PDF
+        const element = document.getElementById("section-to-print")
+        // // clone the element
+        const clonedElement = element.cloneNode(true);
+        // // change display of cloned element 
+        clonedElement.classList.remove("hidden")
+        // // Use html2pdf's from() method to add the element to the PDF
+        // html2pdf().from(clonedElement).set({ pagebreak: { mode: 'avoid-all' } }).save('result.pdf')
+
+
+
+        var doc = new jsPDF();
+
+        // Source HTMLElement or a string containing HTML.
+        var elementHTML = document.querySelector("#section-to-print");
+
+        doc.html(clonedElement, {
+            callback: function (doc) {
+                // Save the PDF
+                doc.save('document-html.pdf');
+            },
+            margin: [10, 10, 10, 10],
+            autoPaging: 'text',
+            x: 0,
+            y: 0,
+            width: 190, //target width in the PDF document
+            windowWidth: 675 //window width in CSS pixels
+        });
         clonedElement.remove();
     })
 }
