@@ -382,7 +382,7 @@ if (document.querySelector('#dowloadBtn')) {
         // change display of cloned element 
         clonedElement.classList.remove("hidden")
         // Use html2pdf's from() method to add the element to the PDF
-        html2pdf().from(clonedElement).save('result.pdf')
+        html2pdf().from(clonedElement).set({ pagebreak: { mode: 'avoid-all' } }).save('result.pdf')
 
         clonedElement.remove();
     })
