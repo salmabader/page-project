@@ -17,6 +17,7 @@ let currentQ = 1
 let myCost = 0
 let myPoints = 20
 const resultBtn = document.createElement("button")
+let selectedIds = []
 if (document.querySelector("#questions-page")) {
 
     categoryNo.innerHTML = catNum
@@ -221,8 +222,8 @@ if (document.querySelector("#questions-page")) {
     resultBtn.addEventListener('click', function () {
         updatePointAndCost('section-32')
         window.location.href = `result.html?points=${myPoints}&cost=${myCost}`
+        localStorage.setItem("answers", JSON.stringify(selectedIds))
     })
-
 
     // functions
 
@@ -247,7 +248,7 @@ if (document.querySelector("#questions-page")) {
 
     function updatePointAndCost(prev) {
         let sectionNo = prev.split('-')[1]
-        let btn = 0
+        let btn = []
         let myId = 0
         let c = 0
         let q = 0
@@ -258,10 +259,15 @@ if (document.querySelector("#questions-page")) {
         if (flattenQuestions[sectionNo - 1]['isMultiSelect']) {
             btn = document.querySelector(`#${prev}`).querySelectorAll("input[type=checkbox]:checked")
         } else {
-            btn = document.querySelector(`#${prev}`).querySelector("input[type=radio]:checked")
+            btn.push(document.querySelector(`#${prev}`).querySelector("input[type=radio]:checked"))
+        }
+        if (btn[0]) {
+            btn.forEach(element => {
+                selectedIds.push(element.id)
+            })
         }
 
-        if (btn && btn.length == undefined) {
+        if (btn[0] && btn.length == undefined) {
             myId = btn.id.split("-")
             c = myId[0].split("#")[1]
             q = myId[1].split("#")[1]
@@ -271,7 +277,7 @@ if (document.querySelector("#questions-page")) {
             myCost += selected_cost
             myPoints += selected_point
         }
-        else if (btn && btn.length != undefined) {
+        else if (btn[0] && btn.length != undefined) {
             btn.forEach(bt => {
                 myId = bt.id.split("-")
                 c = myId[0].split("#")[1]
@@ -289,7 +295,7 @@ if (document.querySelector("#questions-page")) {
 
     function reducePointAndCost(id) {
         let sectionNo = id.split('-')[1]
-        let btn = 0
+        let btn = []
         let myId = 0
         let c = 0
         let q = 0
@@ -300,10 +306,15 @@ if (document.querySelector("#questions-page")) {
         if (flattenQuestions[sectionNo - 1]['isMultiSelect']) {
             btn = document.querySelector(`#${id}`).querySelectorAll("input[type=checkbox]:checked")
         } else {
-            btn = document.querySelector(`#${id}`).querySelector("input[type=radio]:checked")
+            btn.push(document.querySelector(`#${id}`).querySelector("input[type=radio]:checked"))
         }
-
-        if (btn && btn.length == undefined) {
+        if (btn) {
+            selectedIds = []
+            btn.forEach(element => {
+                selectedIds.push(element.id)
+            })
+        }
+        if (btn[0] && btn.length == undefined) {
             myId = btn.id.split("-")
             c = myId[0].split("#")[1]
             q = myId[1].split("#")[1]
@@ -313,7 +324,7 @@ if (document.querySelector("#questions-page")) {
             myCost -= selected_cost
             myPoints -= selected_point
         }
-        else if (btn && btn.length != undefined) {
+        else if (btn[0] && btn.length != undefined) {
             btn.forEach(bt => {
                 myId = bt.id.split("-")
                 c = myId[0].split("#")[1]
@@ -327,7 +338,6 @@ if (document.querySelector("#questions-page")) {
         }
         cost.innerHTML = myCost
         points.innerHTML = myPoints
-
     }
 }
 
@@ -365,27 +375,15 @@ if (document.querySelector("#result-page")) {
 
 if (document.querySelector('#dowloadBtn')) {
     document.querySelector('#dowloadBtn').addEventListener('click', function () {
-        const url = './questionsToPrint.html'; // replace with the URL of the HTML page you want to convert
-        // Create an iframe element with the specified URL
-        var iframe = document.createElement('iframe');
-        iframe.src = url;
+        // Get the HTML element you want to convert to PDF
+        const element = document.getElementById("section-to-print")
+        // clone the element
+        const clonedElement = element.cloneNode(true);
+        // change display of cloned element 
+        clonedElement.classList.remove("hidden")
+        // Use html2pdf's from() method to add the element to the PDF
+        html2pdf().from(clonedElement).set({ pagebreak: { mode: 'avoid-all' } }).save('result.pdf')
 
-        // Hide the iframe
-        iframe.style.display = 'none';
-
-        // Append the iframe to the document body
-        document.body.appendChild(iframe);
-
-        // Wait for the iframe to finish loading
-        iframe.onload = function () {
-            // Use the html2pdf library to convert the iframe's contents to a PDF
-            html2pdf().from(iframe.contentWindow.document.body)
-                .set({ pagebreak: { mode: 'avoid-all' } }).save('result.pdf');
-
-            // Remove the iframe from the document
-            document.body.removeChild(iframe);
-        };
-
+        clonedElement.remove();
     })
 }
-

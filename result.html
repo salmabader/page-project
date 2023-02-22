@@ -17,6 +17,18 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- html2canvas library -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
+
+    <!-- jsPDF library -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -92,5 +104,1113 @@
         });
     </script>
 </body>
+
+<section class="overflow-x-hidden flex flex-col items-center hidden" id="section-to-print">
+    <main class="w-full flex flex-col items-center mt-10 lg:max-w-5xl max-w-2xl">
+        <div class="w-full mb-2 flex flex-col items-center p-2 rounded-xl">
+            <div class="text-3xl font-bold text-gray-800 text-center">The Result</div>
+            <div class="flex w-full justify-center gap-20">
+                <div class="flex flex-col items-center font-medium">
+                    <p>Total cost</p>
+                    <p id="finalCost">00</p>
+                </div>
+                <div class="flex flex-col items-center font-medium">
+                    <p>Total points</p>
+                    <p id="finalPoints">00</p>
+                </div>
+            </div>
+            <div>
+                <img src="./imgs/Gold.png" id="level-img">
+            </div>
+        </div>
+        <div id="myForm">
+            <section id="section-1"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10 mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply the
+                        rainwater management system by?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section1"
+                            id="c#0-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#0-q#0-a#0">
+                            <p class="w-3/4">Rainwater redirection strategy</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                0 SR</p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section1"
+                            id="c#0-q#0-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#0-q#0-a#1">
+                            <p class="w-3/4">Site infiltration paving with not connected tiles with gravel joints
+                                open-graded aggregate systems to the ground groundwater recharge</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 6 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section1"
+                            id="c#0-q#0-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#0-q#0-a#2">
+                            <p class="w-3/4">Open grid paving systems to storage tanks Use in building water supply
+                                system</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 19000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-2"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10 mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Site Sustainability category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section2"
+                            id="c#0-q#1-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#0-q#1-a#0">
+                            <p class="w-3/4">A management strategy is created by a qualified Environmental Professional
+                                to ensure the survival and enhancement of the natural landscape</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 26000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section2"
+                            id="c#0-q#1-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#0-q#1-a#1">
+                            <p class="w-3/4">The three-year aged Solar Reflectance Index (SRI) values of the hardscape,
+                                shade structures and roofs meet the requirement</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 5500 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section2"
+                            id="c#0-q#1-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#0-q#1-a#2">
+                            <p class="w-3/4">Following the light and glare standards values in requirement</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 1300 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-3"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to covering
+                        the unused roof area and/or structures used for shading by vegetative surface?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section3"
+                            id="c#0-q#2-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#0-q#2-a#0">
+                            <p class="w-3/4">Covering with an extensive green roof type</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 6000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section3"
+                            id="c#0-q#2-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#0-q#2-a#1">
+                            <p class="w-3/4">Covering with a Bisolar roof green roof type</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 13000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-4"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to install an
+                        electric vehicle supply equipment?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section4"
+                            id="c#1-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#1-q#0-a#0">
+                            <p class="w-3/4">Electric Vehicle Supply Equipment (Phoenix Contact)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 750000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section4"
+                            id="c#1-q#0-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#1-q#0-a#1">
+                            <p class="w-3/4">Electric Vehicle Supply Equipment (BESENERGY EV)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 26000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-5"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to have a
+                        separate home office/study?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section5"
+                            id="c#1-q#1-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#1-q#1-a#0">
+                            <p class="w-3/4">In case of replacing the use of one of the bedrooms to an office</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 2000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section5"
+                            id="c#1-q#1-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#1-q#1-a#1">
+                            <p class="w-3/4">An area of a room that has been separated by gypsum boards with an area of
+                                15 square meters</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 6000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-6"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">Do you want to have a fully shaded
+                        parking area for a bicycle?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section6"
+                            id="c#1-q#2-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#1-q#2-a#0">
+                            <p class="w-3/4">Shaded bicycle parking floor stand type</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 1600 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section6"
+                            id="c#1-q#2-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#1-q#2-a#1">
+                            <p class="w-3/4">Shaded bicycle parking wall hanger type</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 2000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-7"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">Do you want to design the building
+                        harmoniously aligns with the local cultural and regional identities and traditions?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section7"
+                            id="c#2-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#2-q#0-a#0">
+                            <p class="w-3/4">Islamic geometric motifs on the building façade Architectural patterns</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 20000 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section7"
+                            id="c#2-q#0-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#2-q#0-a#1">
+                            <p class="w-3/4">Interior courtyards naturally lit and shaded</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                0 SR</p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-8"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section8"
+                            id="c#3-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#0-a#0">
+                            <p class="w-3/4">Two wall system (improvement 6.78%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 280000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section8"
+                            id="c#3-q#0-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#0-a#1">
+                            <p class="w-3/4">Lightweight aerated concrete AAC wall (improvement 5.88 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 5900 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section8"
+                            id="c#3-q#0-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#0-a#2">
+                            <p class="w-3/4">Exterior Green Vertical Landscaping Facades- Intensive Green Walls Types-
+                                (improvement 3.03 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 300 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-9"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section9"
+                            id="c#3-q#1-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#1-a#0">
+                            <p class="w-3/4">High insulation roof layers (improvement 4.7%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 5800 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section9"
+                            id="c#3-q#1-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#1-a#1">
+                            <p class="w-3/4">Cool Roof Use Highly Reflective Coatings on Roofs (improvement 2 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 46000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-10"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section10"
+                            id="c#3-q#2-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#2-a#0">
+                            <p class="w-3/4">Low-E glass coating Window (improvement 0.35%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 7500 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section10"
+                            id="c#3-q#2-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#2-a#1">
+                            <p class="w-3/4">Argon gas filled windows in triple Pane Window with Low-E glass coating
+                                (improvement 1.25 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 10000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section10"
+                            id="c#3-q#2-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#2-a#2">
+                            <p class="w-3/4">Electric shutter (improvement 0.53 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 1200 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-11"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section11"
+                            id="c#3-q#3-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#3-a#0">
+                            <p class="w-3/4">One External Light Shelve (improvement 0.86%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 10000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section11"
+                            id="c#3-q#3-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#3-a#1">
+                            <p class="w-3/4">(improvement 0.74 %) the Daylight Light Shelve</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 21000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-12"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section12"
+                            id="c#3-q#4-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#4-a#0">
+                            <p class="w-3/4">Adding a motion-sensitive lighting methods in (entrance, stairs, bathrooms,
+                                dressing rooms)(improvement 3.90%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 46000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section12"
+                            id="c#3-q#4-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#4-a#1">
+                            <p class="w-3/4">Arrange light switches according to window opening by distributed lighting
+                                fixtures to more than one switch in the sunlight level that entering room (improvement
+                                0.85 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 26000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section12"
+                            id="c#3-q#4-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#4-a#2">
+                            <p class="w-3/4">Thermal insulation of all pipelines with fiberglass (improvement 0.5 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 200 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-13"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section13"
+                            id="c#3-q#5-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#5-a#0">
+                            <p class="w-3/4">Installing outdoor lighting units based on the solar energy (improvement
+                                0.3 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 500 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section13"
+                            id="c#3-q#5-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#5-a#1">
+                            <p class="w-3/4">Installing outdoor Motion sensors lighting (improvement 0.27%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 800 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section13"
+                            id="c#3-q#5-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#5-a#2">
+                            <p class="w-3/4">Using Technologies GE CYNC Smart Thermostat and Humidity Sensor
+                                (improvement 3%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 18 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-14"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to applay
+                        features that reduce energy consumption?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section14"
+                            id="c#3-q#6-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#6-a#0">
+                            <p class="w-3/4">Yellow (D) efficiency AC (13.0&gt;EER&gt;11.8)(improvement 12.90 %)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 9700 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section14"
+                            id="c#3-q#6-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#6-a#1">
+                            <p class="w-3/4">Light green (B) efficiency AC (16.5&gt;EER&gt;14.5)(improvement 24%)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 38000 SR
+                            </p>
+                            <p class="hidden">3</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-15"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Energy category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section15"
+                            id="c#3-q#7-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#7-a#0">
+                            <p class="w-3/4">Make sure that all systems and controls have been installed, and are
+                                operating, as intended by the commissioning certificates list of installed in the
+                                MOSTADAM Guide</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 1300 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section15"
+                            id="c#3-q#7-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#7-a#1">
+                            <p class="w-3/4">A competent professional is retained to oversee basic building envelope
+                                verification</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 2400 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section15"
+                            id="c#3-q#7-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#7-a#2">
+                            <p class="w-3/4">The building envelope is tested for condensation, water ingress, air
+                                infiltration and thermal bridging to ensure performance is as designed and in accordance
+                                with standards and has a pre-testing certificate.</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 4500 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-16"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Energy category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section16"
+                            id="c#3-q#8-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#8-a#0">
+                            <p class="w-3/4">A metering strategy is created and implemented which monitors the
+                                building's energy usage and conforms to SBC 1001 Chapter 6.</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                0 SR</p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section16"
+                            id="c#3-q#8-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#8-a#1">
+                            <p class="w-3/4">All relevant electrical appliances have an energy efficiency label from the
+                                Saudi standards</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 6900 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section16"
+                            id="c#3-q#8-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#8-a#2">
+                            <p class="w-3/4">All refrigerants, fire suppression systems and maintenance gases installed
+                                and used within the project boundary have an ODP of zero.</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                0 SR</p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-17"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to have
+                        Solar hot water (SHW) panels that specified and installed to provide a minimum percentage of hot
+                        water demand?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section17"
+                            id="c#3-q#9-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#9-a#0">
+                            <p class="w-3/4">Solar hot water panels provide 30% of hot water demand</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 800 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section17"
+                            id="c#3-q#9-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#9-a#1">
+                            <p class="w-3/4">Solar hot water panels provide 50% of hot water</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 1400 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-18"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building do you want to generate
+                        electricity by photovoltaic (PV) that is installed onsite and provide a percentage of the total
+                        annual building energy demand?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section18"
+                            id="c#3-q#10-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#3-q#10-a#0">
+                            <p class="w-3/4">PV panels achieve 4% of the renewable energy generated</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 600 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section18"
+                            id="c#3-q#10-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#3-q#10-a#1">
+                            <p class="w-3/4">PV panels achieve 25% of the renewable energy generated</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 3700 SR
+                            </p>
+                            <p class="hidden">5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-19"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">Do you want to reduction the indoor
+                        water in the building compared to minimum performance levels?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section19"
+                            id="c#4-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#4-q#0-a#0">
+                            <p class="w-3/4">Reduction 10% of indoor water consumption</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 600 SR
+                            </p>
+                            <p class="hidden">3</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section19"
+                            id="c#4-q#0-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#4-q#0-a#1">
+                            <p class="w-3/4">Reduction 45% of indoor water consumption</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 10000 SR
+                            </p>
+                            <p class="hidden">10</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-20"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">Do you want to reduction the Outdoor
+                        water in the building compared to minimum performance levels?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section20"
+                            id="c#4-q#1-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#4-q#1-a#0">
+                            <p class="w-3/4">Reduces 50% by returning to landscape design professionals to plan
+                                irrigation areas and use automatic Micro Drip Irrigation System that connecting to the
+                                rain and surplus water collection tank</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 2000 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section20"
+                            id="c#4-q#1-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#4-q#1-a#1">
+                            <p class="w-3/4">Reduces 80% by use Central Reverse Osmosis System Station as an irrigation
+                                Source</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 23000 SR
+                            </p>
+                            <p class="hidden">5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-21"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">Do you want to make the irrigation
+                        system controlled by smart controllers and / or soil moisture sensors to water reduces?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section21"
+                            id="c#4-q#2-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#4-q#2-a#0">
+                            <p class="w-3/4">Use soil moisture sensors in irrigation</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 1500 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section21"
+                            id="c#4-q#2-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#4-q#2-a#1">
+                            <p class="w-3/4">Use soil moisture sensors and smart controllers in irrigation</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 1400 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-22"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Water category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section22"
+                            id="c#4-q#3-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#4-q#3-a#0">
+                            <p class="w-3/4">There are no turfed areas within the project boundary</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 18000 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section22"
+                            id="c#4-q#3-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#4-q#3-a#1">
+                            <p class="w-3/4">Air conditioning water condensate</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 3600 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-23"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Water category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section23"
+                            id="c#4-q#4-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#4-q#4-a#0">
+                            <p class="w-3/4"><b>Graywater recycling</b> Graywater from showers, sinks, washing machines
+                                and dishwashers is collected and recycled to be used on-site for WC flushing or
+                                irrigation.</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 48000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section23"
+                            id="c#4-q#4-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#4-q#4-a#1">
+                            <p class="w-3/4"><b>Treated wastewater</b> At least 50% of wastewater is treated on-site and
+                                infiltrated or used on-site for irrigation.</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 8600 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-24"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Health and Comfort category chose one or more ?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section24"
+                            id="c#5-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#0-a#0">
+                            <p class="w-3/4">Daylight and Artificial Lighting illuminance targets specified in the
+                                Supporting Guidance are achieved</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 19000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section24"
+                            id="c#5-q#0-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#0-a#1">
+                            <p class="w-3/4">Have views and manual glare control are installed on all windows</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 200 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section24"
+                            id="c#5-q#0-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#5-q#0-a#2">
+                            <p class="w-3/4">Have views and automated glare-control devices are installed on all windows
+                            </p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 500 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-25"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to have a
+                        comfort zone of acoustics and indoor air quality?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section25"
+                            id="c#5-q#1-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#1-a#0">
+                            <p class="w-3/4">Field test reports obtained from the specialist audio engineer to make sure
+                                the Internal ambient noise levels are less than 35 to 40dB(A)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 200 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section25"
+                            id="c#5-q#1-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#5-q#1-a#1">
+                            <p class="w-3/4">Indoor Air Quality (IAQ) Testing</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 3000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-26"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">For building tightening the envelope
+                        the external doors for all building types are weather-stripped?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section26"
+                            id="c#5-q#2-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#2-a#0">
+                            <p class="w-3/4">The external doors draft stopper under door seal (v shape) types</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 300 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section26"
+                            id="c#5-q#2-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#5-q#2-a#1">
+                            <p class="w-3/4">The external doors draft stopper under door seal (PVC rubber) types</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 100 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-27"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Health and Comfort category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section27"
+                            id="c#5-q#3-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#3-a#0">
+                            <p class="w-3/4">Front Entrance shading</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 400 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section27"
+                            id="c#5-q#3-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#3-a#1">
+                            <p class="w-3/4">Courtyards/ patios shading cover</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 2000 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section27"
+                            id="c#5-q#3-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#5-q#3-a#2">
+                            <p class="w-3/4">Shading the walkways paths</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 9600 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-28"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to apply more
+                        features from Health and Comfort category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section28"
+                            id="c#5-q#4-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#4-a#0">
+                            <p class="w-3/4">Purchase orders for all (adhesives, Sealants, Paints and Coatings) do not
+                                exceed the VOC limits of (SCAQMD)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 2080 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section28"
+                            id="c#5-q#4-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#5-q#4-a#1">
+                            <p class="w-3/4">All internal composite wood materials and Suspended Ceiling Systems have
+                                maximum formaldehyde emissions as per the Supporting Guidance.</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 1400 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section28"
+                            id="c#5-q#4-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#5-q#4-a#2">
+                            <p class="w-3/4">The design of the building complies with the requirements of the Lifetime
+                                Homes standard In to make building Access for All</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 72500.88 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-29"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the bulding do you want to apply
+                        construction and demolition waste management plan (CDMP)?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section29"
+                            id="c#6-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#6-q#0-a#0">
+                            <p class="w-3/4">Have a Contractor develops a construction and demolition waste management
+                                plan (CDWMP)</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 7000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section29"
+                            id="c#6-q#0-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#6-q#0-a#1">
+                            <p class="w-3/4">Monthly monitoring of the CDWMP</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 6000 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-30"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to have a
+                        features from Materials and Waste category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section30"
+                            id="c#6-q#1-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#6-q#1-a#0">
+                            <p class="w-3/4">A minimum of 50% of all reinforcing or stressing steel used within the
+                                project boundary has a minimum of 80% post- consumer or pre-consumer recycled content.
+                            </p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-up text-green-600"></i> 700 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section30"
+                            id="c#6-q#1-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#6-q#1-a#1">
+                            <p class="w-3/4">A minimum of 15% of all aggregates used on site are recycled aggregates.
+                            </p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 3200 SR
+                            </p>
+                            <p class="hidden">1</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-31"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 "> In the bulding do you want to adopte
+                        an innovative design or construction solution that improves the durability or flexibility of the
+                        building or reduces maintenance requirements?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section31"
+                            id="c#7-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#7-q#0-a#0">
+                            <p class="w-3/4">An innovative design or environmentally friendly product</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 4600 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="radio" name="section31"
+                            id="c#7-q#0-a#1"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#7-q#0-a#1">
+                            <p class="w-3/4">Sustainable innovation in the building structure or in the hydraulic or
+                                smart systems</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 58000 SR
+                            </p>
+                            <p class="hidden">2</p>
+                        </label></div>
+                </div>
+            </section>
+            <section id="section-32"
+                class="relative z-0 flex flex-col lg:max-w-4xl lg:min-w-4xl max-w-2xl lg:mx-0 mx-10  mb-10">
+
+                <div class="flex flex-col bg-white rounded-xl shadow-md">
+                    <div class="px-10 py-5 text-center bg-gray-200 ">In the building you want to have a
+                        features from Policies, Management and Maintenance category chose one or more?</div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section32"
+                            id="c#8-q#0-a#0"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#8-q#0-a#0">
+                            <p class="w-3/4">Residential Waste Management by Recycling bins</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 600 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section32"
+                            id="c#8-q#0-a#1"><label class="flex justify-between items-center gap-5 p-2 cursor-pointer "
+                            for="c#8-q#0-a#1">
+                            <p class="w-3/4">Residential Waste Management by Recycling waste sorting bag</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                <i class="fa-sharp fa-solid fa-caret-down text-red-600"></i> 22 SR
+                            </p>
+                            <p class="hidden">0.5</p>
+                        </label></div>
+                    <div class="border-b border-gray-400 flex items-center px-2"><input type="checkbox" name="section32"
+                            id="c#8-q#0-a#2"><label
+                            class="flex justify-between items-center gap-5 p-2 cursor-pointer  hover:rounded-b-xl peer-checked:rounded-b-xl"
+                            for="c#8-q#0-a#2">
+                            <p class="w-3/4">Smart meters and digital feedback systems are installed which configure and
+                                display energy and water usage data</p>
+                            <p
+                                class="md:w-28 w-32 mx-2 text-center md:text-sm text-[10px] font-medium bg-gray-200 md:px-0 px-2 py-2 rounded-full">
+                                0 SR</p>
+                            <p class="hidden">0</p>
+                        </label></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module">
+        const myAnswers = JSON.parse(localStorage.getItem("answers"))
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString)
+        const cost = urlParams.get('cost')
+        const points = urlParams.get('points')
+        const resultSec = document.querySelector("#result-details")
+        const myCost = document.querySelector("#finalCost")
+        const myPoints = document.querySelector("#finalPoints")
+        myCost.innerHTML = cost + " SR"
+        myPoints.innerHTML = points
+        myAnswers.forEach(id => {
+            document.getElementById(id).checked = true
+        })
+    </script>
+
+</section>
+
 
 </html>
