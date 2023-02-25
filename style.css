@@ -129,3 +129,70 @@ button:active {
 [transition-style="in:circle:hesitate"] {
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
 }
+
+
+@-webkit-keyframes in {
+    0% {
+        -webkit-transform: scale(0) rotate(12deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        -webkit-transform: scale(1) rotate(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes in {
+    0% {
+        transform: scale(0) rotate(12deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes out {
+    0% {
+        -webkit-transform: scale(1) rotate(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: scale(0) rotate(-12deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes out {
+    0% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        transform: scale(0) rotate(-12deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+section.show {
+    -webkit-animation: in 700ms ease both;
+    animation: in 700ms ease both;
+}
+
+section.hide {
+    -webkit-animation: out 700ms ease both;
+    animation: out 700ms ease both;
+}

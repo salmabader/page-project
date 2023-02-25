@@ -167,8 +167,11 @@ if (document.querySelector("#questions-page")) {
         allSections.forEach(section => {
             if (section.id != id) {
                 section.classList.add("hidden")
-            } else {
-                section.classList.remove("hidden")
+            } else if (section.id == id) {
+                section.classList.add("show")
+                setTimeout(function () {
+                    section.classList.remove("hidden")
+                }, 100); // timed to match animation-duration
                 questionNumber++
                 currentQ++
                 if (flattenQuestions[questionNumber]['category'] != flattenQuestions[questionNumber - 1]['category']) {
@@ -186,7 +189,10 @@ if (document.querySelector("#questions-page")) {
         const allSections = document.querySelectorAll("section")
         allSections.forEach(section => {
             if (section.id == id) {
-                section.classList.remove("hidden")
+                section.classList.add("show")
+                setTimeout(function () {
+                    section.classList.remove("hidden")
+                }, 100); // timed to match animation-duration
                 questionNumber--
                 currentQ--
                 if (flattenQuestions[questionNumber]['category'] != flattenQuestions[questionNumber + 1]['category']) {
@@ -196,8 +202,9 @@ if (document.querySelector("#questions-page")) {
                 updateCate()
                 changeBg()
                 reducePointAndCost(id)
-            } else {
+            } else if (section.id != id) {
                 section.classList.add("hidden")
+                console.log('hi')
             }
         });
     }
@@ -402,7 +409,7 @@ if (document.querySelector('#dowloadBtn')) {
             x: 0,
             y: 0,
             width: 190, //target width in the PDF document
-            windowWidth: 675 //window width in CSS pixels
+            windowWidth: 700 //window width in CSS pixels
         });
         clonedElement.remove();
     })
