@@ -204,7 +204,6 @@ if (document.querySelector("#questions-page")) {
                 reducePointAndCost(id)
             } else if (section.id != id) {
                 section.classList.add("hidden")
-                console.log('hi')
             }
         });
     }
